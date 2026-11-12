@@ -10,11 +10,59 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AssetsRouteImport } from './routes/assets'
+import { Route as BrowseRouteImport } from './routes/browse'
+import { Route as CalendarRouteImport } from './routes/calendar'
+import { Route as ChallengesRouteImport } from './routes/challenges'
+import { Route as ClassroomRouteImport } from './routes/classroom'
+import { Route as DownloadsRouteImport } from './routes/downloads'
+import { Route as ForumRouteImport } from './routes/forum'
 import { Route as LearnRouteImport } from './routes/learn'
+import { Route as MaterialsRouteImport } from './routes/materials'
+import { Route as MentorsRouteImport } from './routes/mentors'
+import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as StoreRouteImport } from './routes/store'
+import { Route as StudentsRouteImport } from './routes/students'
+import { Route as WorkshopsRouteImport } from './routes/workshops'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssetsRoute = AssetsRouteImport.update({
+  id: '/assets',
+  path: '/assets',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrowseRoute = BrowseRouteImport.update({
+  id: '/browse',
+  path: '/browse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalendarRoute = CalendarRouteImport.update({
+  id: '/calendar',
+  path: '/calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChallengesRoute = ChallengesRouteImport.update({
+  id: '/challenges',
+  path: '/challenges',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClassroomRoute = ClassroomRouteImport.update({
+  id: '/classroom',
+  path: '/classroom',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DownloadsRoute = DownloadsRouteImport.update({
+  id: '/downloads',
+  path: '/downloads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForumRoute = ForumRouteImport.update({
+  id: '/forum',
+  path: '/forum',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LearnRoute = LearnRouteImport.update({
@@ -22,31 +70,159 @@ const LearnRoute = LearnRouteImport.update({
   path: '/learn',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MaterialsRoute = MaterialsRouteImport.update({
+  id: '/materials',
+  path: '/materials',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentorsRoute = MentorsRouteImport.update({
+  id: '/mentors',
+  path: '/mentors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramsRoute = ProgramsRouteImport.update({
+  id: '/programs',
+  path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StoreRoute = StoreRouteImport.update({
+  id: '/store',
+  path: '/store',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudentsRoute = StudentsRouteImport.update({
+  id: '/students',
+  path: '/students',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkshopsRoute = WorkshopsRouteImport.update({
+  id: '/workshops',
+  path: '/workshops',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/assets': typeof AssetsRoute
+  '/browse': typeof BrowseRoute
+  '/calendar': typeof CalendarRoute
+  '/challenges': typeof ChallengesRoute
+  '/classroom': typeof ClassroomRoute
+  '/downloads': typeof DownloadsRoute
+  '/forum': typeof ForumRoute
   '/learn': typeof LearnRoute
+  '/materials': typeof MaterialsRoute
+  '/mentors': typeof MentorsRoute
+  '/programs': typeof ProgramsRoute
+  '/store': typeof StoreRoute
+  '/students': typeof StudentsRoute
+  '/workshops': typeof WorkshopsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/assets': typeof AssetsRoute
+  '/browse': typeof BrowseRoute
+  '/calendar': typeof CalendarRoute
+  '/challenges': typeof ChallengesRoute
+  '/classroom': typeof ClassroomRoute
+  '/downloads': typeof DownloadsRoute
+  '/forum': typeof ForumRoute
   '/learn': typeof LearnRoute
+  '/materials': typeof MaterialsRoute
+  '/mentors': typeof MentorsRoute
+  '/programs': typeof ProgramsRoute
+  '/store': typeof StoreRoute
+  '/students': typeof StudentsRoute
+  '/workshops': typeof WorkshopsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/assets': typeof AssetsRoute
+  '/browse': typeof BrowseRoute
+  '/calendar': typeof CalendarRoute
+  '/challenges': typeof ChallengesRoute
+  '/classroom': typeof ClassroomRoute
+  '/downloads': typeof DownloadsRoute
+  '/forum': typeof ForumRoute
   '/learn': typeof LearnRoute
+  '/materials': typeof MaterialsRoute
+  '/mentors': typeof MentorsRoute
+  '/programs': typeof ProgramsRoute
+  '/store': typeof StoreRoute
+  '/students': typeof StudentsRoute
+  '/workshops': typeof WorkshopsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/learn'
+  fullPaths:
+    | '/'
+    | '/assets'
+    | '/browse'
+    | '/calendar'
+    | '/challenges'
+    | '/classroom'
+    | '/downloads'
+    | '/forum'
+    | '/learn'
+    | '/materials'
+    | '/mentors'
+    | '/programs'
+    | '/store'
+    | '/students'
+    | '/workshops'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/learn'
-  id: '__root__' | '/' | '/learn'
+  to:
+    | '/'
+    | '/assets'
+    | '/browse'
+    | '/calendar'
+    | '/challenges'
+    | '/classroom'
+    | '/downloads'
+    | '/forum'
+    | '/learn'
+    | '/materials'
+    | '/mentors'
+    | '/programs'
+    | '/store'
+    | '/students'
+    | '/workshops'
+  id:
+    | '__root__'
+    | '/'
+    | '/assets'
+    | '/browse'
+    | '/calendar'
+    | '/challenges'
+    | '/classroom'
+    | '/downloads'
+    | '/forum'
+    | '/learn'
+    | '/materials'
+    | '/mentors'
+    | '/programs'
+    | '/store'
+    | '/students'
+    | '/workshops'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AssetsRoute: typeof AssetsRoute
+  BrowseRoute: typeof BrowseRoute
+  CalendarRoute: typeof CalendarRoute
+  ChallengesRoute: typeof ChallengesRoute
+  ClassroomRoute: typeof ClassroomRoute
+  DownloadsRoute: typeof DownloadsRoute
+  ForumRoute: typeof ForumRoute
   LearnRoute: typeof LearnRoute
+  MaterialsRoute: typeof MaterialsRoute
+  MentorsRoute: typeof MentorsRoute
+  ProgramsRoute: typeof ProgramsRoute
+  StoreRoute: typeof StoreRoute
+  StudentsRoute: typeof StudentsRoute
+  WorkshopsRoute: typeof WorkshopsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,6 +234,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/assets': {
+      id: '/assets'
+      path: '/assets'
+      fullPath: '/assets'
+      preLoaderRoute: typeof AssetsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/browse': {
+      id: '/browse'
+      path: '/browse'
+      fullPath: '/browse'
+      preLoaderRoute: typeof BrowseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calendar': {
+      id: '/calendar'
+      path: '/calendar'
+      fullPath: '/calendar'
+      preLoaderRoute: typeof CalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/challenges': {
+      id: '/challenges'
+      path: '/challenges'
+      fullPath: '/challenges'
+      preLoaderRoute: typeof ChallengesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/classroom': {
+      id: '/classroom'
+      path: '/classroom'
+      fullPath: '/classroom'
+      preLoaderRoute: typeof ClassroomRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/downloads': {
+      id: '/downloads'
+      path: '/downloads'
+      fullPath: '/downloads'
+      preLoaderRoute: typeof DownloadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forum': {
+      id: '/forum'
+      path: '/forum'
+      fullPath: '/forum'
+      preLoaderRoute: typeof ForumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/learn': {
       id: '/learn'
       path: '/learn'
@@ -65,12 +290,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LearnRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/materials': {
+      id: '/materials'
+      path: '/materials'
+      fullPath: '/materials'
+      preLoaderRoute: typeof MaterialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentors': {
+      id: '/mentors'
+      path: '/mentors'
+      fullPath: '/mentors'
+      preLoaderRoute: typeof MentorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programs': {
+      id: '/programs'
+      path: '/programs'
+      fullPath: '/programs'
+      preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/store': {
+      id: '/store'
+      path: '/store'
+      fullPath: '/store'
+      preLoaderRoute: typeof StoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/students': {
+      id: '/students'
+      path: '/students'
+      fullPath: '/students'
+      preLoaderRoute: typeof StudentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/workshops': {
+      id: '/workshops'
+      path: '/workshops'
+      fullPath: '/workshops'
+      preLoaderRoute: typeof WorkshopsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AssetsRoute: AssetsRoute,
+  BrowseRoute: BrowseRoute,
+  CalendarRoute: CalendarRoute,
+  ChallengesRoute: ChallengesRoute,
+  ClassroomRoute: ClassroomRoute,
+  DownloadsRoute: DownloadsRoute,
+  ForumRoute: ForumRoute,
   LearnRoute: LearnRoute,
+  MaterialsRoute: MaterialsRoute,
+  MentorsRoute: MentorsRoute,
+  ProgramsRoute: ProgramsRoute,
+  StoreRoute: StoreRoute,
+  StudentsRoute: StudentsRoute,
+  WorkshopsRoute: WorkshopsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

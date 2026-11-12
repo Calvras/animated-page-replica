@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowUpRight, GraduationCap, Play, Star, Check, Plus, Clock, Users, BookOpen } from "lucide-react";
 import man1 from "@/assets/man1.jpg";
@@ -8,9 +8,9 @@ import woman from "@/assets/woman.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SkillNest — Build new skills to advance your career" },
+      { title: "ExamGlow — Build new skills to advance your career" },
       { name: "description", content: "High-quality courses taught by industry experts to help you build real-world skills and confidence." },
-      { property: "og:title", content: "SkillNest — Build new skills to advance your career" },
+      { property: "og:title", content: "ExamGlow — Build new skills to advance your career" },
       { property: "og:description", content: "High-quality courses taught by industry experts." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -79,7 +79,7 @@ function Index() {
       {/* Nav */}
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-          <a href="#" className="font-display text-2xl font-bold tracking-tight">SkillNest</a>
+          <a href="#" className="font-display text-2xl font-bold tracking-tight">ExamGlow</a>
           <nav className="hidden gap-9 text-sm md:flex">
             {["Home", "About", "Courses", "Pricing", "Contact"].map((l, i) => (
               <a key={l} href={`#${l.toLowerCase()}`} className={`transition-opacity hover:opacity-60 ${i === 0 ? "font-semibold" : "text-foreground/80"}`}>{l}</a>
@@ -118,12 +118,13 @@ function Index() {
             <div className="mt-8 grid items-end gap-8 md:grid-cols-2">
               <div className="animate-rise" style={{ animationDelay: "400ms" }}>
                 <p className="max-w-md text-foreground/80">High-quality courses taught by industry experts to help you build real-world skills and confidence. Start your journey today.</p>
-                <a href="#courses" className="group mt-8 inline-flex items-center gap-4 rounded-full bg-primary py-2 pl-6 pr-2 font-medium text-primary-foreground">
+                <Link to="/learn" className="group mt-8 inline-flex items-center gap-4 rounded-full bg-primary py-2 pl-6 pr-2 font-medium text-primary-foreground">
                   Get Started
                   <span className="flex h-11 w-11 items-center justify-center rounded-full bg-background text-foreground transition-transform group-hover:rotate-45">
                     <ArrowUpRight className="h-5 w-5" />
                   </span>
-                </a>
+                
+                </Link>
               </div>
               <img src={man2} alt="Student learning online" width={1024} height={768} className="animate-rise aspect-[4/3] w-full rounded-3xl object-cover" style={{ animationDelay: "550ms" }} />
             </div>
@@ -143,7 +144,7 @@ function Index() {
       {/* About / Stats */}
       <section id="about" className="mx-auto max-w-7xl px-6 py-24">
         <Reveal>
-          <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">About SkillNest</p>
+          <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">About ExamGlow</p>
           <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
             Learning designed around real careers, not just certificates.
           </h2>
@@ -230,7 +231,7 @@ function Index() {
         <Reveal delay={150}>
           <div className="flex gap-1">{[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-foreground" />)}</div>
           <blockquote className="mt-6 font-display text-3xl font-medium leading-snug tracking-tight">
-            "SkillNest helped me move from retail into product design in eight months. The mentors genuinely care."
+            "ExamGlow helped me move from retail into product design in eight months. The mentors genuinely care."
           </blockquote>
           <p className="mt-6 font-semibold">Sofia Martín</p>
           <p className="text-sm text-muted-foreground">Product Designer at Klarna</p>
@@ -293,11 +294,12 @@ function Index() {
           </div>
         </Reveal>
         <div className="mt-10 flex flex-wrap items-center justify-between gap-4 text-sm text-muted-foreground">
-          <span className="font-display text-xl font-bold text-foreground">SkillNest</span>
-          <span>hello@skillnest.com</span>
-          <span>© 2026 SkillNest. All rights reserved.</span>
+          <span className="font-display text-xl font-bold text-foreground">ExamGlow</span>
+          <span>hello@ExamGlow.com</span>
+          <span>© 2026 ExamGlow. All rights reserved.</span>
         </div>
       </footer>
     </div>
   );
 }
+
